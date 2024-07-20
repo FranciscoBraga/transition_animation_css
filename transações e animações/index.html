@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transações e Animações</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+          .transacaoHover{
+            transition: background-color 2s; 
+          }
+          .transacaoHover:hover{
+            background-color: white;
+          } 
+          .transacaoTamanho{
+            transition: transform 1s 0.5s;
+          }
+          .transacaoTamanho:hover{
+            transform: scale(2);
+          }
+          .transacaoRotacao{
+            transition: transform 1s;
+          }
+          .transacaoRotacao:hover{
+            transform: rotateX(180deg);
+          }
+
+       /*    .transacaoLargura{
+            transition: width 1s 0.5s, height 1s;
+          }
+          .transacaoLargura:hover{
+            width: 160px;
+            height: 160px;
+          } */
+          .transacaoCheckBox{
+            transition: transform 0.5s;
+          }
+          .transacaoCheckBox:checked{
+            transform: rotateY(360deg);
+          }
+          .transacaoRadio{
+            transition:transform 1s;
+          }
+          .transacaoRadio:checked{
+            transform: scale(1.5);
+          }
+          .trasancaoInput{
+            transition: transform 1s;
+          }
+          .trasancaoInput:focus{
+            transform: scaleY(1.5) scaleX(1.1) rotateX(360deg);
+          }
+
+          .animacaoFadeIn{
+            animation: fadeIn 2s linear;
+          }
+
+          .animacaoFadeOut{
+            animation: fadeIn 2s linear; 
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+           }
+
+          @keyframes fadeIn {
+            from{opacity: 0;}
+            to{opacity: 1;}
+          }
+
+          .animacaoFadeInFadeOut{
+            animation: fadeInFadeOut 2s linear infinite;
+          }
+
+          @keyframes fadeInFadeOut {
+            0%{opacity:1;}
+            50%{opacity: 0.1;}
+            100%{opacity: 1;}
+          }
+
+          .animacaoGirar{
+            animation: rotate 2s linear infinite; 
+          }
+
+          @keyframes rotate {
+            from{transform: rotateZ(0deg);}
+            to{transform: rotateZ(360deg);}
+          }
+
+        
+    </style>
+</head>
+<body>
+    <h1 id="id">Transações no CSS3</h1>
+    <h2>Hover</h2>
+    <section>
+        <div class="item azul transacaoHover">item 1</div>
+        <div class="item verde transacaoTamanho">item 2</div>
+        <div class="item amarelo transacaoRotacao">item 3</div>
+        <div class="item vermelho">item 4</div>
+    </section>
+
+    <h2>Delay</h2>
+    <section>
+        <div class="item vermelho transacaoLargura">item 4</div>
+    </section>
+
+    <h2>Checked</h2>
+    <section>
+        <input type="checkbox"  class="ckeckBox transacaoCheckBox" id="">
+        <input type="checkbox"  class="ckeckBox transacaoCheckBox" id="">
+        <input type="checkbox"  class="ckeckBox transacaoCheckBox" id="">
+        <input type="radio" name="time"  class="ckeckBox transacaoRadio">
+        <input type="radio" name="time"  class="ckeckBox transacaoRadio">
+    </section>
+
+    <h2>Focus</h2>
+    <section>
+        <input type="text"  class="input trasancaoInput" id="">
+    </section>
+
+    <h1>Animações no CSS3</h1>
+    
+    <section>
+        <div class="item azul animacaoFadeIn">item 1</div>
+        <div class="item amarelo animacaoFadeOut">item 2</div>
+        <div class="item red animacaoFadeInFadeOut">item 3</div>
+    </section>
+
+    <h1>Rotações</h1>
+    
+    <section>
+        <div class="item2 roda azul animationGirar">item 1</div>  
+    </section>
+    
+</body>
+</html>
